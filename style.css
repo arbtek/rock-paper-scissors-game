@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    animation: gradientBG 15s ease infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+
+    @keyframes gradientBG {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+}
+/* Container for game elements */
+.game-container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+/* Styles for the game buttons */
+.game-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 15px 30px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Container for game elements to ensure they are centered */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Adjust height based on your layout needs */
+    padding: 20px; /* padding around the content */
+}
+
+.game-section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px; /* better separation around game section */
+    text-align: center; /* Ensures that text and buttons are centered */
+}
+
+.choices h2{
+    margin: 10px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers the buttons in their container */
+    gap: 10px; /* Adds space between buttons */
+}
+
+.game-button:hover {
+    background: linear-gradient(145deg, #007bff, #004185);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.game-button:active {
+    background: linear-gradient(145deg, #0056b3, #002c6b);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+/* Result display styling */
+#result {
+    font-size: 24px; /* Ensuring it's large enough to be seen easily */
+    color: #dc3545; /* A color that stands out, change as needed */
+    margin-top: 20px;
+    opacity: 1; /* Start with visible opacity */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: scale(1.1); /* Slightly larger to draw attention */
+    animation: fadeIn 0.5s ease-out forwards; /* Animation to fade in result */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+
+#result.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Selected button styling */
+.game-button.selected {
+    border: 2px solid #4CAF50; /* Green border for selected item */
+    transform: scale(1.1);
+}
+
+/* Styling for statistics section */
+#statistics {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Adjust width as needed */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+/* footer styling*/
+.footer {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.winner {
+    animation: pulseGreen 1s infinite;
+}
+
+.loser {
+    animation: pulseRed 1s infinite;
+}
+
+@keyframes pulseGreen {
+    0%, 100% { background-color: #dff0d8; }
+    50% { background-color: #a5d6a7; }
+}
+
+@keyframes pulseRed {
+    0%, 100% { background-color: #f2dede; }
+    50% { background-color: #ef9a9a; }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#user-choice {
+    animation: slideInFromLeft 0.5s forwards;
+}
+
+#computer-choice {
+    animation: slideInFromRight 0.5s forwards;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .game-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+    #result{
+        font-size: 12px;
+    }
+}}

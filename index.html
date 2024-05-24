@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Rock Paper Scissors Game</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Rock Paper Scissors Game</h1>
+            </header>
+            <main class="main-content">
+                <div class="game-section">
+                    <div class="choices">
+                        <h2>Computer Choice: <span id="computer-choice"></span></h2>
+                        <h2>User Choice: <span id="user-choice"></span></h2>
+                        <h2>Result: <span id="result"></span></h2>
+                    </div>
+                    <div class="buttons">
+                        <button id="rock" class="game-button">Rock</button>
+                        <button id="paper" class="game-button">Paper</button>
+                        <button id="scissors" class="game-button">Scissors</button>
+                        <button id="reset" class="game-button">Reset Game</button>
+                        
+                    </div>
+                    <div id="statistics">
+                        <h3>Game Statistics:</h3>
+                        <p id="games-played">Games Played: 0</p>
+                        <p id="user-wins">User Wins: 0</p>
+                        <p id="computer-wins">Computer Wins: 0</p>
+                        <p id="draws">Draws: 0</p>
+                        <p id="history">History: </p>
+                    </div>
+                    <div id="detailed-stats">
+                        <h3>Detailed Statistics:</h3>
+                        <p id="player-wins">Player Wins: 0</p>
+                        <p id="computer-wins">Computer Wins: 0</p>
+                        <p id="draws">Draws: 0</p>
+                        <p id="player-streak">Longest Player Streak: 0</p>
+                        <p id="computer-streak">Longest Computer Streak: 0</p>
+                        <p id="choice-stats">Most Frequent Choices: Player - None, Computer - None</p>
+                        <p id="average-decision-time">Average Decision Time: 0s</p>
+                    </div>
+                    
+                </div>
+            </main>
+            <footer class="footer">
+                <p>Copyright &copy; 2024. All rights reserved.</p>
+            </footer>
+        </div>
+        <script src="app.js" charset="utf-8"></script>
+    </body>
+</html>
